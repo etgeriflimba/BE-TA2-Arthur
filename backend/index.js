@@ -1,6 +1,15 @@
 import express from "express";
 import cors from "cors";
 import UserRoute from "./routes/UserRoute.js";
+import db from "./config/Database.js";
+
+try {
+    await db.authenticate();
+    console.log ("Data base connect")
+} catch (error) {
+    console.error(error);
+    
+}
 
 
 
